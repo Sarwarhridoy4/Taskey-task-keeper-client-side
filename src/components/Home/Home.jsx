@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -11,9 +12,11 @@ const Home = () => {
           <p className='mt-6 text-gray-500 dark:text-gray-300'>
             We offers you taking notes in your fingertips with 0 hassel.
           </p>
-          <button className='px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-600 rounded-lg hover:bg-blue-500 lg:mx-0 lg:w-auto focus:outline-none'>
+                  <Link to='add-a-task'>
+                  <button className='px-6 py-2.5 mt-6 text-sm font-medium leading-5 text-center text-white capitalize bg-blue-600 rounded-lg hover:bg-blue-500 lg:mx-0 lg:w-auto focus:outline-none'>
             Take Your First Note!
           </button>
+                  </Link>
           <p className='mt-3 text-sm text-gray-400 '>No credit card required</p>
         </div>
 
