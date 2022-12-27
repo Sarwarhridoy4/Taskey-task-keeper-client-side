@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../../Layout/Main/Main";
-import ComingSoon from "../../Coming Soon/ComingSoon";
+import Addtask from "../../AddTask/Addtask";
 import Error from "../../Error/Error";
 import Home from "../../Home/Home";
-
+import MyTask from "../../MyTask/MyTask";
+import ComplpletedTask from "../../CompletedTask/CompletedTask";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -16,15 +17,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add-a-task",
-                element:<ComingSoon></ComingSoon>
+                element:<Addtask></Addtask>
             },
             {
                 path: "/my-tasks",
-                element:<ComingSoon></ComingSoon>
+                element:<MyTask></MyTask>
             },
             {
                 path: "/completed-task",
-                element:<ComingSoon></ComingSoon>
+                element:<ComplpletedTask></ComplpletedTask>
             },
     ]
     }
