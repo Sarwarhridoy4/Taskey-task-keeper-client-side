@@ -3,10 +3,11 @@ import Main from "../../../Layout/Main/Main";
 import Addtask from "../../AddTask/Addtask";
 import Error from "../../Error/Error";
 import Home from "../../Home/Home";
-import MyTask from "../../MyTask/MyTask";
-import ComplpletedTask from "../../CompletedTask/CompletedTask";
+// import MyTask from "../../MyTask/MyTask";
+// import ComplpletedTask from "../../CompletedTask/CompletedTask";
 import Login from "../../Login/Login";
 import SignUp from "../../SignUp/SignUp";
+import Loading from "../../Loading/Loading";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -23,11 +24,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/my-tasks",
-                element:<MyTask></MyTask>
+                element:<Loading></Loading>
             },
             {
                 path: "/completed-task",
-                element:<ComplpletedTask></ComplpletedTask>
+                element:<Loading></Loading>
             },
             {
                 path: "/login",
