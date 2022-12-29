@@ -1,7 +1,7 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../contexts/Auth/AuthContext';
 
@@ -9,7 +9,9 @@ const SignUp = () => {
     const {register,handleSubmit,formState: { errors }} = useForm();
   const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
   const [signUpError, setSignUPError] = useState('');
-  const navigate = useNavigate()
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/';
     const googleProvider = new GoogleAuthProvider();
     const handelSignUp = data => {
         setSignUPError('');
@@ -17,6 +19,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(from,{replace:true} ||'/')
                 toast.success('User Created Successfully.')
                 const userInfo = {
                     displayName: data.username
@@ -42,7 +45,7 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         toast(`authenticated as ${user?.displayName}`);
-        navigate("/");
+        navigate(from, { replace: true }||"/");
       })
       .catch((error) => {
         console.error(error.message);

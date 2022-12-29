@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../contexts/Auth/AuthContext";
 
 const Addtask = () => {
   const {
@@ -11,6 +12,7 @@ const Addtask = () => {
   } = useForm();
   const imageHostKey = process.env.REACT_APP_imgbb_key;
   const navigate = useNavigate();
+  const {user} = useContext(AuthContext)
 
   const handleAddTask = (data) => {
     const image = data.image[0];
@@ -27,12 +29,13 @@ const Addtask = () => {
           console.log(imgData.data.url);
           const task = {
             name: data.name,
+            email:user?.email,
             image: imgData.data.url,
             description: data.description,
           };
 
           // save task to the database
-          fetch("http://localhost:5000/add-task", {
+          fetch("https://taskey-server-lyart.vercel.app/add-task", {
             method: "POST",
             headers: {
               "content-type": "application/json",

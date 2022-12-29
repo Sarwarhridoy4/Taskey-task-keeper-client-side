@@ -13,7 +13,7 @@ const Login = () => {
   const [loginError, setloginError] = useState('')
   const locaton = useLocation()
   const navigate = useNavigate()
-    const from = locaton.state?.from?.pathname || '/';
+const from = locaton.state?.from?.pathname || '/';
     
     //login
     const handelLogIn = (data) => {
@@ -24,7 +24,7 @@ const Login = () => {
             const user = result.user
             toast.success('User login Successfully!')
             console.log(user); 
-            navigate(from,{replace:true})
+            navigate(from,{replace:true} ||'/')
           })
           .catch(error => {
             console.error(error)
@@ -39,7 +39,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         toast(`authenticated as ${user?.displayName}`)
-        navigate("/");
+        navigate(from, { replace: true } ||'/');
        
       })
       .catch((error) => {
