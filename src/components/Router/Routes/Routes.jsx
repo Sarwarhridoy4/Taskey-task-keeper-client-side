@@ -4,10 +4,9 @@ import Addtask from "../../AddTask/Addtask";
 import Error from "../../Error/Error";
 import Home from "../../Home/Home";
 import MyTask from "../../MyTask/MyTask";
-// import ComplpletedTask from "../../CompletedTask/CompletedTask";
+import ComplpletedTask from "../../CompletedTask/CompletedTask";
 import Login from "../../Login/Login";
 import SignUp from "../../SignUp/SignUp";
-import Loading from "../../Loading/Loading";
 import Private from "../Private/Private";
 const router = createBrowserRouter([
     {
@@ -21,15 +20,15 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add-a-task",
-                element:<Addtask></Addtask>
+                element:<Private><Addtask></Addtask></Private>
             },
             {
                 path: "/my-tasks",
-                element:<Private><MyTask></MyTask></Private>
+                element:<MyTask></MyTask>
             },
             {
                 path: "/completed-task",
-                element:<Loading></Loading>
+                element:<ComplpletedTask></ComplpletedTask>
             },
             {
                 path: "/login",
