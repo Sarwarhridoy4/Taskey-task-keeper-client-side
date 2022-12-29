@@ -8,6 +8,7 @@ import MyTask from "../../MyTask/MyTask";
 import Login from "../../Login/Login";
 import SignUp from "../../SignUp/SignUp";
 import Loading from "../../Loading/Loading";
+import Private from "../Private/Private";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/my-tasks",
-                element:<MyTask></MyTask>
+                element:<Private><MyTask></MyTask></Private>
             },
             {
                 path: "/completed-task",
