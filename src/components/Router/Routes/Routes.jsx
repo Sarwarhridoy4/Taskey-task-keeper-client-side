@@ -3,7 +3,7 @@ import Main from "../../../Layout/Main/Main";
 import Addtask from "../../AddTask/Addtask";
 import Error from "../../Error/Error";
 import Home from "../../Home/Home";
-// import MyTask from "../../MyTask/MyTask";
+import MyTask from "../../MyTask/MyTask";
 // import ComplpletedTask from "../../CompletedTask/CompletedTask";
 import Login from "../../Login/Login";
 import SignUp from "../../SignUp/SignUp";
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/my-tasks",
-                element:<Loading></Loading>
+                element:<MyTask></MyTask>
             },
             {
                 path: "/completed-task",
