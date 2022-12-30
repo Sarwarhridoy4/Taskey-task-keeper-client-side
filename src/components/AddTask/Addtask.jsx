@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../contexts/Auth/AuthContext";
+import Loading from "../Loading/Loading";
 
 const Addtask = () => {
   const {
@@ -12,7 +13,7 @@ const Addtask = () => {
   } = useForm();
   const imageHostKey = process.env.REACT_APP_imgbb_key;
   const navigate = useNavigate();
-  const {user} = useContext(AuthContext)
+  const {user,loading} = useContext(AuthContext)
 
   const handleAddTask = (data) => {
     const image = data.image[0];
@@ -52,9 +53,9 @@ const Addtask = () => {
       });
   };
 
-  // if(isLoading){
-  //     return <Loading></Loading>
-  // }
+  if(loading){
+      return <Loading></Loading>
+  }
   return (
     <section className='bg-white dark:bg-gray-900'>
       <div className='container flex items-center justify-center min-h-screen px-6 mx-auto'>
