@@ -35,7 +35,7 @@ const Addtask = () => {
           };
 
           // save task to the database
-          fetch("https://taskey-server-lyart.vercel.app/add-task", {
+          fetch("https://taskey-server-sarwarhridoy4.vercel.app/add-task", {
             method: "POST",
             headers: {
               "content-type": "application/json",
