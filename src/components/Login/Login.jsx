@@ -41,7 +41,7 @@ const Login = () => {
     googleSignIn(googleProvider)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
         toast(`authenticated as ${user?.displayName}`);
         navigate(from, { replace: true } || "/");
       })
