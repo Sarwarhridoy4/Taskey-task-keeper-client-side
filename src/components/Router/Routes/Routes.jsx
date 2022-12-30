@@ -23,7 +23,13 @@ const router = createBrowserRouter([
                 element:<Private><Addtask></Addtask></Private>
             },
             {
-                path: "/my-tasks",
+                path: "/my-tasks/:email",
+                loader: async ({ params }) => {
+                    // console.log(params);
+                    return fetch(
+                      `https://taskey-server-lyart.vercel.app/my-task/${params.email}`
+                    );
+                  },
                 element:<MyTask></MyTask>
             },
             {
