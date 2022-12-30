@@ -30,7 +30,7 @@ const router = createBrowserRouter([
                       `https://taskey-server-sarwarhridoy4.vercel.app/my-task/${params.email}`
                     );
                   },
-                element:<MyTask></MyTask>
+                element:<Private><MyTask></MyTask></Private>
             },
             {
                 path: "/completed-task",
